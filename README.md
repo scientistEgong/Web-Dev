@@ -13,7 +13,7 @@ Each project demostrates different HTML, CSS, and JavaScript concepts such as pa
 ## Live Demo
 `You can view the deployed version of the project here:
 
-Link: https://cpe314-lab1-html-basics-scientist-egong-4cytorv50.vercel.app
+[Link]:(https://scientistegong.github.io/Web-Dev/)
 
 The homepage contains links to each individual projects.
 `
