@@ -1,0 +1,50 @@
+/* =================================
+   GLOBAL PAGE STYLING
+================================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    /* Background gradient for visual appearance */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+
+/* =================================
+   TEXT / PARAGRAPH STYLING
+================================= */
+
+p {
+    color: blue;
+    font-size: 18px;
+    line-height: 1.6; /* improves readability */
+}
+
+
+/* =================================
+   CONTENT BOX
+================================= */
+
+.box {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 40px;
+    background-color: white;
+
+    /* Optional improvement for visual depth */
+    border-radius: 6px;
+}
+
+
+/* =================================
+   HEADER AND FOOTER
+================================= */
+
+header,
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(255,255,255,0.8);
+}

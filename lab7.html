@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7 – JavaScript Events</title>
+
+    <style>
+        /* Container styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* Hover / Click Box */
+        #hoverBox {
+            width: 200px;
+            height: 100px;
+            background: lightgray;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        #hoverBox:hover {
+            background: gray;
+            color: white;
+        }
+
+        /* Counter */
+        #counter {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        /* Form Feedback */
+        #FormMessage {
+            font-weight: bold;
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Input styling */
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Timer text */
+        #timerText {
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Registration Number -->
+    <p><strong>Reg-No:</strong> 23/EG/CO/027</p>
+
+    <header>
+        <h1>Lab 7: JavaScript Event Projects</h1>
+    </header>
+
+    <main>
+
+        <!-- Mouse Hover / Click Example -->
+        <section>
+            <h2>Mouse Over / Click Event</h2>
+            <button id="hoverBox">Click Me</button>
+            <input type="text" id="input" placeholder="Type here">
+        </section>
+
+        <!-- Counter Example -->
+        <section>
+            <h2>Counter</h2>
+            <div id="counter">0</div>
+            <button id="increaseBtn">Increase</button>
+        </section>
+
+        <!-- Form Validation Example -->
+        <section>
+            <h2>Form Validation</h2>
+            <form id="emailForm">
+                <input type="text" id="emailInput" placeholder="Enter your Email:" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="FormMessage"></p>
+        </section>
+
+        <!-- Prevent Default Example -->
+        <section>
+            <h2>Prevent Default Action</h2>
+            <a href="https://google.com" id="myLink" target="_blank">Go to Google</a>
+        </section>
+
+        <!-- Timer Example -->
+        <section>
+            <h2>Timer Example</h2>
+            <p id="timerText">Wait for the message...</p>
+        </section>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="lab7.js"></script>
+
+</body>
+</html>

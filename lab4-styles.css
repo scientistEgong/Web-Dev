@@ -1,0 +1,90 @@
+/* =================================
+   GLOBAL PAGE STYLING
+================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* =================================
+   NAVIGATION BAR
+================================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+}
+
+/* Navigation Links */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* =================================
+   GRID LAYOUT
+================================= */
+
+.container {
+    display: grid; /* corrected spelling */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Grid Items */
+
+.item {
+    background-color: lightblue;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+
+    /* Animation on hover */
+    transition: transform 0.3s;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 600px) {
+
+    /* Change grid to single column */
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack navigation links vertically */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Change page theme on small screens */
+    body {
+        background-color: #222;
+        color: white;
+    }
+
+}

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personal Finance Tracker</title>
+
+<style>
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background-color:#f4f6f9;
+padding:20px 40px;
+line-height:1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+background:#1e293b;
+color:white;
+padding:15px 40px;
+border-radius:8px;
+margin-bottom:20px;
+}
+
+header nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* =========================
+   INTRO SECTION
+========================= */
+
+.intro-section{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin:30px 0;
+gap:30px;
+}
+
+.intro-section img{
+width:280px;
+border-radius:10px;
+}
+
+/* =========================
+   CARD COMPONENT
+========================= */
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0px 4px 12px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-container label{
+display:block;
+font-weight:600;
+margin-bottom:5px;
+font-size:14px;
+}
+
+.form-container input,
+.form-container textarea{
+width:100%;
+padding:8px 10px;
+margin-bottom:12px;
+border:1px solid #d1d5db;
+border-radius:6px;
+font-size:14px;
+}
+
+.form-container textarea{
+height:120px;
+resize:none;
+}
+
+/* RADIO GROUP */
+
+.gender-group{
+display:flex;
+gap:10px;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+
+button{
+padding:8px 18px;
+font-weight:600;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0px 4px 10px rgba(0,0,0,0.05);
+}
+
+table th{
+background:#2563eb;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:10px;
+text-align:center;
+border-bottom:1px solid #e5e7eb;
+}
+
+table tr:last-child td{
+border-bottom:none;
+}
+
+.amount{
+font-weight:bold;
+color:#15803d;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+text-align:center;
+margin-top:30px;
+color:#555;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h3>Registration Number: 23/EG/CO/027</h3>
+
+<header>
+<nav>
+<h1>Personal Finance Dashboard</h1>
+</nav>
+</header>
+
+<main>
+
+<!-- INTRODUCTION -->
+
+<section class="intro-section">
+
+<div>
+<h2>Introduction</h2>
+
+<p>
+This dashboard allows users to track personal finances.
+Income and expenses are recorded to calculate total savings.
+Users may also subscribe to receive updates via newsletter.
+</p>
+
+</div>
+
+<img src="../personal-finance.png" alt="Personal Finance Illustration">
+
+</section>
+
+<!-- FORM SECTION -->
+
+<section class="card">
+
+<h2>Add New User</h2>
+
+<form id="financeForm" class="form-container">
+
+<label for="name">Full Name</label>
+<input type="text" id="name" required>
+
+<label for="income">Income</label>
+<input type="number" id="income" required>
+
+<label for="expenses">Expenses</label>
+<input type="number" id="expenses" required>
+
+<label>Gender</label>
+
+<div class="gender-group">
+
+<input type="radio" id="male" name="gender" value="male" required>
+<label for="male">Male</label>
+
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+
+</div>
+
+<label for="newsletter">Subscribe to Newsletter</label>
+<input type="checkbox" id="newsletter">
+
+<label for="comments">Comments (Existing users only)</label>
+<textarea id="comments" placeholder="Leave blank if new user"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</section>
+
+<!-- TABLE SECTION -->
+
+<section class="card">
+
+<h2>Finance Records</h2>
+
+<table id="financeTable">
+
+<thead>
+<tr>
+<th>SN</th>
+<th>Name</th>
+<th>Income</th>
+<th>Expenses</th>
+<th>Savings</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Martins Cruz</td>
+<td>$300,000</td>
+<td>$250,000</td>
+<td class="amount">$50,000</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Daniel Waltz</td>
+<td>$150,000</td>
+<td>$90,000</td>
+<td class="amount">$60,000</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Peter Jonas</td>
+<td>$225,000</td>
+<td>$75,000</td>
+<td class="amount">$150,000</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Personal Finance Tracker</p>
+
+</footer>
+
+<script>
+
+/* =========================
+   DOM ELEMENTS
+========================= */
+
+const form = document.getElementById("financeForm");
+const tableBody = document.querySelector("#financeTable tbody");
+const newsletter = document.getElementById("newsletter");
+const comments = document.getElementById("comments");
+
+let serialNumber = 4;
+
+/* =========================
+   NEWSLETTER LOGIC
+========================= */
+
+newsletter.addEventListener("change", function(){
+
+if(newsletter.checked){
+
+comments.disabled = true;
+comments.value = "";
+
+}else{
+
+comments.disabled = false;
+
+}
+
+});
+
+/* =========================
+   FORM SUBMISSION
+========================= */
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name = document.getElementById("name").value;
+const income = Number(document.getElementById("income").value);
+const expenses = Number(document.getElementById("expenses").value);
+
+const savings = income - expenses;
+
+const row = tableBody.insertRow();
+
+row.innerHTML = `
+<td>${serialNumber++}</td>
+<td>${name}</td>
+<td>$${income.toLocaleString()}</td>
+<td>$${expenses.toLocaleString()}</td>
+<td class="amount">$${savings.toLocaleString()}</td>
+`;
+
+form.reset();
+comments.disabled = false;
+
+});
+
+</script>
+
+</body>
+</html>

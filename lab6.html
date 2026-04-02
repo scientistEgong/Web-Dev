@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6 – DOM Manipulation</title>
+    <style>
+        /* Optional basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .toggleBox {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: lightcoral;
+            color: white;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Registration Number -->
+    <p><strong>Reg-No:</strong> 23/EG/CO/027</p>
+
+    <!-- Page Title -->
+    <header>
+        <h1 id="title">Original Title</h1>
+    </header>
+
+    <main>
+        <h2>Lab 6: DOM Manipulation Activities</h2>
+
+        <!-- Paragraph -->
+        <section>
+            <p id="myParagraph">This is my paragraph.</p>
+        </section>
+
+        <!-- Existing List -->
+        <section>
+            <h3>Dynamic List</h3>
+            <ul id="existingList">
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </section>
+
+        <!-- Toggle Section -->
+        <section>
+            <div class="toggleBox">
+                This box can be hidden or shown.
+            </div>
+            <button id="toggleBtn" type="button">Toggle Visibility</button>
+        </section>
+
+        <!-- Form Section -->
+        <section>
+            <form id="myForm">
+                <input type="text" id="nameInput" placeholder="Enter your name" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="output"></div>
+        </section>
+
+        <!-- Button to Change Title -->
+        <section>
+            <button type="button" onclick="changeTitle()">Change Title</button>
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Simple function to change page title
+        function changeTitle() {
+            const title = document.getElementById("title");
+            if (title) {
+                title.textContent = "New Title!";
+            }
+        }
+    </script>
+    <script src="lab6-script.js"></script>
+
+</body>
+</html>
