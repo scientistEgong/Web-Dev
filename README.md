@@ -13,7 +13,7 @@ Each project demostrates different HTML, CSS, and JavaScript concepts such as pa
 ## Live Demo
 `You can view the deployed version of the project here:
 
-[Link]:(https://scientistegong.github.io/Web-Dev/)
+[Link:](https://scientistegong.github.io/Web-Dev/)
 
 The homepage contains links to each individual projects.
 `
